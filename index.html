@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            background-color: #f2d0a4;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #ff0066;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .heart {
+            color: red;
+            font-size: 2em;
+        }
+        .button {
+            background-color: #ff0066;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #ff3385;
+        }
+
+        /* Photo string and frame styles */
+        .photo-string {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            border: 10px solid #ff0066; /* Picture frame border color */
+            border-radius: 10px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+    <!-- Include Canvas Confetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <h1>Will you be my Valentine?</h1>
+    <p>You're the one I want to spend this Valentine's Day with! <span class="heart">❤️</span></p>
+
+    <button class="button" id="yesButton">Yes!</button>
+
+    <!-- Inserted photo section here -->
+    <div class="photo-string">
+        <div class="photo-frame">
+            <img class="photo" src="zachmegs1.jpg" alt="Photo 1">
+        </div>
+        <div class="photo-frame">
+            <img class="photo" src="zachmegs2.jpg" alt="Photo 2">
+        </div>
+        <div class="photo-frame">
+            <img class="photo" src="zachmegs3.jpg" alt="Photo 3">
+        </div>
+    </div>
+
+    <script>
+        // Add event listener for the "Yes!" button
+        document.getElementById("yesButton").addEventListener("click", function() {
+            // Display the confirmation message
+            alert("I am so happy you said yes!");
+            // Trigger confetti effect when the button is clicked
+            generateConfetti();
+        });
+
+        // Function to generate confetti effect
+        function generateConfetti() {
+            confetti({
+                particleCount: 100,         // Number of confetti particles
+                angle: 90,                  // Angle of spread (in degrees)
+                spread: 180,                // Spread of the confetti
+                origin: { x: 0.5, y: 0.5 }, // Origin of the confetti (center of the screen)
+                colors: ['#ff0066', '#ff3385', '#ff66b2', '#ff99cc'], // Colors for the confetti
+                gravity: 0.5,               // Controls the speed of falling confetti
+            });
+        }
+    </script>
+
+</body>
+</html>
